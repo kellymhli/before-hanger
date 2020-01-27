@@ -5,7 +5,6 @@ import Form from './components/Form';
 import Restaurant from './components/Restaurant';
 const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
 const API_KEY = process.env.REACT_APP_API_KEY;
-console.log(CLIENT_ID)
 
 class App extends React.Component {
 

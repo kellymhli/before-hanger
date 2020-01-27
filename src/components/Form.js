@@ -4,10 +4,10 @@ const Form = () => {
     return (
         <div className="form-container">
             <div className="price-container">
-                <input type="checkbox" name="price" value="1" /> $
-                <br /><input type="checkbox" name="price" value="2" /> $$
-                <br /><input type="checkbox" name="price" value="3" /> $$$
-                <br /><input type="checkbox" name="price" value="4" /> $$$$
+                <input type="radio" name="price" value="1" /> $
+                <br /><input type="radio" name="price" value="2" /> $$
+                <br /><input type="radio" name="price" value="3" /> $$$
+                <br /><input type="radio" name="price" value="4" /> $$$$
             </div>
 
             <div className="cuisine-container">
