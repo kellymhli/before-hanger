@@ -4,14 +4,23 @@ import Title from './components/Title';
 import Form from './components/Form';
 import Restaurant from './components/Restaurant';
 
-function App() {
-  return (
-    <div>
-      <Title />
-      <Form />
-      <Restaurant />
-    </div>
-  );
+class App extends React.Component {
+  getOptions = (e) => {
+    e.preventDefault();
+    const values = e.target;
+    console.log(values);
+  }
+
+  render() {
+    return (
+      <div>
+        <Title />
+        <Form getOptions={ this.getOptions }/>
+        <Restaurant />
+      </div>
+    );
+  };
+
 }
 
 export default App;
