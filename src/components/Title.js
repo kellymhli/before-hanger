@@ -2,9 +2,9 @@ import React from 'react';
 
 const Title = () => {
     return (
-        <div>
+        <div className="title-container">
             <h1 className="app-title">Before Hanger</h1>
-            <p className="app-subtitle">Decide on a restaurant before someone gets hangry!</p>
+            <p className="app-subtitle">Too hungry to decide on a restaurant?</p>
         </div>
     );
 };
