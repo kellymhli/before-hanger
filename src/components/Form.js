@@ -12,12 +12,13 @@ const Form = props => (
 
             <div className="cuisine-container">
                 <input type="checkbox" name="cuisine" value="am" /> American
-                <br /><input type="checkbox" name="cuisine" value="ch" /> Chinese
-                <br /><input type="checkbox" name="cuisine" value="gm" /> German
-                <br /><input type="checkbox" name="cuisine" value="in" /> Indian
-                <br /><input type="checkbox" name="cuisine" value="kr" /> Korean
-                <br /><input type="checkbox" name="cuisine" value="th" /> Thai
-                <br /><input type="checkbox" name="cuisine" value="vn" /> Vietnamese
+                <br /><input type="checkbox" name="cuisine" value="chinese" /> Chinese
+                <br /><input type="checkbox" name="cuisine" value="german" /> German
+                <br /><input type="checkbox" name="cuisine" value="indian" /> Indian
+                <br /><input type="checkbox" name="cuisine" value="krorean" /> Korean
+                <br /><input type="checkbox" name="cuisine" value="thai" /> Thai
+                <br /><input type="checkbox" name="cuisine" value="vietnamese" /> Vietnamese
+                <br /><input type="checkbox" name="cuisine" value="breakfast" /> Breakfast
             </div>
             <div>
                 <input type="text" name="city" placeholder="City..." />

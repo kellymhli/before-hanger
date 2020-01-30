@@ -11,16 +11,16 @@ import Restaurant from './components/Restaurant';
 class App extends React.Component {
 
   state = {
-    'term': undefined,
-    'location': undefined,
-    'latitude': undefined,
-    'longitude': undefined,
-    'radius': 10000,
-    'categories': undefined,
-    'locale': 'en_US',
-    'limit': 50,
-    'price': undefined,
-    'open_now': true,
+    term: undefined,
+    location: undefined,
+    latitude: undefined,
+    longitude: undefined,
+    radius: 10000,
+    categories: undefined,
+    locale: 'en_US',
+    limit: 50,
+    price: undefined,
+    open_now: true,
   }
 
   getOptions = async (e) => {
@@ -35,9 +35,9 @@ class App extends React.Component {
         checkedCuisines.push(cuisines[i].value);
       }
     }
-
     const price = e.target.elements.price.value;
     const city = e.target.elements.city.value;
+    this.setState({city: city, price: price});
     console.log(price, city);
 
     // Fetch from Yelp API via axios
@@ -47,9 +47,8 @@ class App extends React.Component {
         Authorization: `Bearer ${API_KEY}`
       },
       params: {
-        categories:'asian',
-        location: `${city}`,
-        price: `${price}`,
+        location: `${this.state.city}`,
+        price: `${this.state.price}`,
         limit: 50,
         open_now: true,
       }
