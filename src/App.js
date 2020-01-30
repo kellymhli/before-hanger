@@ -35,30 +35,31 @@ class App extends React.Component {
         checkedCuisines.push(cuisines[i].value);
       }
     }
-    const price = e.target.elements.price.value;
+    const cats = checkedCuisines.join(',');
+    const p = e.target.elements.price.value;
     const city = e.target.elements.city.value;
-    this.setState({city: city, price: price});
-    console.log(price, city);
 
-    // Fetch from Yelp API via axios
-    // https://medium.com/@chaoyue_zhao/how-to-make-axios-api-calls-with-yelp-fusion-inside-react-js-10755d8485c5
-    axios.get(`${'https://cors-anywhere.herokuapp.com/'}https://api.yelp.com/v3/businesses/search`, {
-      headers: {
-        Authorization: `Bearer ${API_KEY}`
-      },
-      params: {
-        location: `${this.state.city}`,
-        price: `${this.state.price}`,
-        limit: 50,
-        open_now: true,
-      }
-    })
-    .then((res) => {
-      console.log(res.data.businesses);
-    })
-    .catch((err) => {
-      console.log('error');
-    })
+    // Update selected values in state and fetch results from Yelp API
+    this.setState({location: city, price: p, categories: cats}, () => {
+      // https://medium.com/@chaoyue_zhao/how-to-make-axios-api-calls-with-yelp-fusion-inside-react-js-10755d8485c5
+      axios.get(`${'https://cors-anywhere.herokuapp.com/'}https://api.yelp.com/v3/businesses/search`, {
+        headers: {
+          Authorization: `Bearer ${API_KEY}`
+        },
+        params: {
+          location: `${this.state.location}`,
+          price: `${this.state.price}`,
+          limit: 50,
+          open_now: true,
+        }
+      })
+      .then((res) => {
+        console.log(res.data.businesses);
+      })
+      .catch((err) => {
+        console.log('error');
+      })
+    });
   }
 
   render() {
