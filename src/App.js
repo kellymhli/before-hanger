@@ -17,6 +17,7 @@ class App extends React.Component {
     longitude: undefined,
     categories: undefined,
     price: undefined,
+    radius: 2414,  //Default to 1.5mi in meters
   }
 
   getOptions = async (e) => {
@@ -31,12 +32,13 @@ class App extends React.Component {
         checkedCuisines.push(cuisines[i].value);
       }
     }
-    const cats = checkedCuisines.join(',');
-    const p = e.target.elements.price.value;
+    const categories = checkedCuisines.join(',');
+    const price = e.target.elements.price.value;
     const city = e.target.elements.city.value;
+    const radius = parseInt(e.target.elements.radius.value);
 
     // Update selected values in state and fetch results from Yelp API
-    this.setState({location: city, price: p, categories: cats}, () => {
+    this.setState({location: city, price: price, categories: categories, radius: radius*1609}, () => {
       // https://medium.com/@chaoyue_zhao/how-to-make-axios-api-calls-with-yelp-fusion-inside-react-js-10755d8485c5
       axios.get(`${'https://cors-anywhere.herokuapp.com/'}https://api.yelp.com/v3/businesses/search`, {
         headers: {
@@ -46,10 +48,10 @@ class App extends React.Component {
           location: `${this.state.location}`,
           price: `${this.state.price}`,
           location: `${this.state.location}`,
+          radius: `${this.state.radius}`,
           limit: 50,
           open_now: true,
           locale: 'en_US',
-          radius: 2414,  //1.5 miles converted to meters
         }
       })
       .then((res) => {

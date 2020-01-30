@@ -22,6 +22,7 @@ const Form = props => (
             </div>
             <div>
                 <input type="text" name="city" placeholder="City..." />
+                <input type="text" name="radius" placeholder="How many miles can you travel?" />
             </div>
             <button>I'm Hungry</button>
         </div>
