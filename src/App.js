@@ -15,12 +15,8 @@ class App extends React.Component {
     location: undefined,
     latitude: undefined,
     longitude: undefined,
-    radius: 10000,
     categories: undefined,
-    locale: 'en_US',
-    limit: 50,
     price: undefined,
-    open_now: true,
   }
 
   getOptions = async (e) => {
@@ -52,6 +48,8 @@ class App extends React.Component {
           location: `${this.state.location}`,
           limit: 50,
           open_now: true,
+          locale: 'en_US',
+          radius: 2414,  //1.5 miles converted to meters
         }
       })
       .then((res) => {
