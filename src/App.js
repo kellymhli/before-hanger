@@ -25,7 +25,14 @@ class App extends React.Component {
 
   getOptions = async (e) => {
     e.preventDefault();
-    console.log(e.target.elements.cuisine);
+    const cuisines = e.target.elements.cuisine;
+    var i;
+    for (i = 0; i < cuisines.length; i++) {
+      if (cuisines[i].checked) {
+        console.log(cuisines[i].value);
+      }
+    }
+
     const price = e.target.elements.price.value;
     const city = e.target.elements.city.value;
     console.log(price, city);
