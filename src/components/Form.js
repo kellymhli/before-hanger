@@ -19,8 +19,9 @@ const Form = props => (
                 <br /><input type="checkbox" name="cuisine" value="th" /> Thai
                 <br /><input type="checkbox" name="cuisine" value="vn" /> Vietnamese
             </div>
-            <input type="text" name="city" placeholder="City..." />
-
+            <div>
+                <input type="text" name="city" placeholder="City..." />
+            </div>
             <button>I'm Hungry</button>
         </div>
     </form>

@@ -5,9 +5,8 @@ import Title from './components/Title';
 import Form from './components/Form';
 import Restaurant from './components/Restaurant';
 
-// const API_KEY = process.env.REACT_APP_API_KEY;
-// const ENDPOINT = 'https://api.yelp.com/v3/businesses/search'
-// const HEADERS: {Authorization: `Bearer ${API_KEY}`}
+ const API_KEY = process.env.REACT_APP_API_KEY;
+ const ENDPOINT = 'https://api.yelp.com/v3/businesses/search';
 
 class App extends React.Component {
 
@@ -26,25 +25,27 @@ class App extends React.Component {
 
   getOptions = async (e) => {
     e.preventDefault();
-    console.log(e);
-    // const values = e.target.elements;
-    // console.log(values);
-    // const api_call = await fetch(`${ENDPOINT}`);
-    // console.log(api_call);
-    axios.get('https://api.yelp.com/v3/businesses/search', {
+    console.log(e.target.elements.cuisine);
+    const price = e.target.elements.price.value;
+    const city = e.target.elements.city.value;
+    console.log(price, city);
+
+    // Fetch from Yelp API via axios
+    // https://medium.com/@chaoyue_zhao/how-to-make-axios-api-calls-with-yelp-fusion-inside-react-js-10755d8485c5
+    axios.get(`${'https://cors-anywhere.herokuapp.com/'}https://api.yelp.com/v3/businesses/search`, {
       headers: {
-        Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`
+        Authorization: `Bearer ${API_KEY}`
       },
       params: {
-        location: 'San Francisco',
-        categories: 'breakfast_brunch',
+        categories:'asian',
+        location: `${city}`,
       }
-      .then((res) => {
-        console.log(res)
-      })
-      .catch((err) => {
-        console.log ('error')
-      })
+    })
+    .then((res) => {
+      console.log(res.data.businesses);
+    })
+    .catch((err) => {
+      console.log('error');
     })
   }
 
