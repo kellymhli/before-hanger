@@ -25,11 +25,14 @@ class App extends React.Component {
 
   getOptions = async (e) => {
     e.preventDefault();
+
+    // Get all the cuisines that have been checked and add to array
     const cuisines = e.target.elements.cuisine;
     var i;
+    let checkedCuisines = [];
     for (i = 0; i < cuisines.length; i++) {
       if (cuisines[i].checked) {
-        console.log(cuisines[i].value);
+        checkedCuisines.push(cuisines[i].value);
       }
     }
 
@@ -46,6 +49,9 @@ class App extends React.Component {
       params: {
         categories:'asian',
         location: `${city}`,
+        price: `${price}`,
+        limit: 50,
+        open_now: true,
       }
     })
     .then((res) => {
