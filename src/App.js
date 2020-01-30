@@ -5,9 +5,9 @@ import Title from './components/Title';
 import Form from './components/Form';
 import Restaurant from './components/Restaurant';
 
-const API_KEY = process.env.REACT_APP_API_KEY;
-const ENDPOINT = 'https://api.yelp.com/v3/businesses/search'
-const HEADERS: {'Authorization': `bearer ${API_KEY}`}
+// const API_KEY = process.env.REACT_APP_API_KEY;
+// const ENDPOINT = 'https://api.yelp.com/v3/businesses/search'
+// const HEADERS: {Authorization: `Bearer ${API_KEY}`}
 
 class App extends React.Component {
 
@@ -26,10 +26,26 @@ class App extends React.Component {
 
   getOptions = async (e) => {
     e.preventDefault();
-    const values = e.target.elements;
-    console.log(values);
-    const api_call = await fetch(`${ENDPOINT}`);
-    console.log(api_call);
+    console.log(e);
+    // const values = e.target.elements;
+    // console.log(values);
+    // const api_call = await fetch(`${ENDPOINT}`);
+    // console.log(api_call);
+    axios.get('https://api.yelp.com/v3/businesses/search', {
+      headers: {
+        Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`
+      },
+      params: {
+        location: 'San Francisco',
+        categories: 'breakfast_brunch',
+      }
+      .then((res) => {
+        console.log(res)
+      })
+      .catch((err) => {
+        console.log ('error')
+      })
+    })
   }
 
   render() {

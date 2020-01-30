@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Form = () => {
-    return (
+const Form = props => (
+    <form onSubmit={props.getOptions}>
         <div className="form-container">
             <div className="price-container">
                 <input type="radio" name="price" value="1" /> $
@@ -19,10 +19,11 @@ const Form = () => {
                 <br /><input type="checkbox" name="cuisine" value="th" /> Thai
                 <br /><input type="checkbox" name="cuisine" value="vn" /> Vietnamese
             </div>
+            <input type="text" name="city" placeholder="City..." />
 
             <button>I'm Hungry</button>
         </div>
-    );
-};
+    </form>
+);
 
 export default Form;
