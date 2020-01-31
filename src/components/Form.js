@@ -23,7 +23,7 @@ const Form = props => (
                 <label for="gm">German</label>
                 <br /><input type="checkbox" name="cuisine" value="indian" id="in" />
                 <label for="in">Indian</label>
-                <br /><input type="checkbox" name="cuisine" value="krorean" id="kr" />
+                <br /><input type="checkbox" name="cuisine" value="korean" id="kr" />
                 <label for="kr">Korean</label>
                 <br /><input type="checkbox" name="cuisine" value="japanese" id="jp" />
                 <label for="jp">Japanese</label>

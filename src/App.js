@@ -24,6 +24,7 @@ class App extends React.Component {
 
   // Select random index from resulting array of restaurants
   getRandInt = () => {
+    if (this.state.res.total === 0) return 0;
     const randomInt = Math.round(Math.random() * this.state.res.total);
     if (randomInt >= 50 || randomInt >= this.state.res.total) {
       return this.getRandInt();
@@ -51,6 +52,7 @@ class App extends React.Component {
     // Update selected values in state and fetch results from Yelp API
     // https://medium.com/@chaoyue_zhao/how-to-make-axios-api-calls-with-yelp-fusion-inside-react-js-10755d8485c5
     this.setState({location: city, price: price, categories: categories, radius: radius*1609}, () => {
+      console.log(this.state);
       axios.get(`${'https://cors-anywhere.herokuapp.com/'}${ENDPOINT}`, {
         headers: {
           Authorization: `Bearer ${API_KEY}`
@@ -59,6 +61,7 @@ class App extends React.Component {
           location: `${this.state.location}`,
           price: `${this.state.price}`,
           radius: `${this.state.radius}`,
+          categories: `${this.state.categories}`,
           limit: 50,
           open_now: true,
           locale: 'en_US',
@@ -68,10 +71,13 @@ class App extends React.Component {
         // Randomly select restaurant from resulting list
         this.setState({res: res.data}, () => {
           const int = this.getRandInt();
-          console.log(int);
-          this.setState({selectedRes: res.data.businesses[int]}, () => {
-            console.log(this.state.res, this.state.selectedRes);
-          });
+          if (int === 0) {
+            console.log("No results found.")
+          } else {
+            this.setState({selectedRes: res.data.businesses[int]}, () => {
+              console.log(this.state.res, this.state.selectedRes);
+            });
+          }
         });
       })
       .catch((err) => {
