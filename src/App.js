@@ -85,7 +85,19 @@ class App extends React.Component {
       <div>
         <Title />
         <Form getOptions={ this.getOptions } />
-        <Restaurant resId={this.state.selectedRes} />
+        {this.state.selectedRes ? <Restaurant
+          id={this.state.selectedRes.id}
+          name={this.state.selectedRes.name}
+          imgUrl={this.state.selectedRes.image_url}
+          url={this.state.selectedRes.url}
+          reviewCount={this.state.selectedRes.review_count}
+          price={this.state.selectedRes.price}
+          rating={this.state.selectedRes.rating}
+          lat={this.state.selectedRes.coordinates.latitude}
+          long={this.state.selectedRes.coordinates.longitude}
+          phone={this.state.selectedRes.phone}
+          displayAddress={this.state.selectedRes.location.display_address}
+          />:null}
       </div>
     );
   };
