@@ -1,9 +1,13 @@
 import React from 'react';
 
-const Restaurant = () => {
+const Restaurant = props => {
     return (
         <div className="restaurant-container">
             Restaurant result
+            <p>
+                Res:
+                { props.restaurants }
+            </p>
         </div>
     );
 };

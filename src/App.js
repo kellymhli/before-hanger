@@ -48,7 +48,6 @@ class App extends React.Component {
         params: {
           location: `${this.state.location}`,
           price: `${this.state.price}`,
-          location: `${this.state.location}`,
           radius: `${this.state.radius}`,
           limit: 50,
           open_now: true,
@@ -56,7 +55,7 @@ class App extends React.Component {
         }
       })
       .then((res) => {
-        this.setState({res: res.data.businesses});
+        this.setState({res: res.data.businesses[0].id});
         console.log(this.state.res);
       })
       .catch((err) => {
@@ -69,8 +68,8 @@ class App extends React.Component {
     return (
       <div>
         <Title />
-        <Form getOptions={ this.getOptions }/>
-        <Restaurant />
+        <Form getOptions={ this.getOptions } />
+        <Restaurant restaurants={ this.state.res } />
       </div>
     );
   };
