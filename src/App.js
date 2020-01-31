@@ -25,7 +25,7 @@ class App extends React.Component {
   // Select random index from resulting array of restaurants
   getRandInt = () => {
     const randomInt = Math.round(Math.random() * this.state.res.total);
-    if (randomInt > 50 - 1 || randomInt < 0) {
+    if (randomInt > 50 - 1 || randomInt >= this.state.res.total) {
       return this.getRandInt();
     } else {
       return randomInt;
