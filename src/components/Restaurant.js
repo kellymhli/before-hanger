@@ -7,7 +7,7 @@ const Restaurant = props => {
             <div>
                 <br />{props.id}
                 <br /><h2>{props.name}</h2>
-                <br /><img src={props.imgUrl} alt="{props.name} Image" width="300" height="200"></img>
+                <br /><img src={props.imgUrl} alt="{props.name}" width="300" height="200" />
                 <br /><a href={props.url}>Yelp Link</a>
                 <br />Reviews: {props.reviewCount}
                 <br />Price: {props.price}

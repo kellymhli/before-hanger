@@ -21,7 +21,7 @@ const Form = props => (
                 <label for="ch">Chinese</label>
                 <br /><input type="checkbox" name="cuisine" value="german" id="gm" />
                 <label for="gm">German</label>
-                <br /><input type="checkbox" name="cuisine" value="indian" id="in" />
+                <br /><input type="checkbox" name="cuisine" value="indpak" id="in" />
                 <label for="in">Indian</label>
                 <br /><input type="checkbox" name="cuisine" value="korean" id="kr" />
                 <label for="kr">Korean</label>
@@ -31,9 +31,9 @@ const Form = props => (
                 <label for="th">Thai</label>
                 <br /><input type="checkbox" name="cuisine" value="vietnamese" id="vt" />
                 <label for="vt">Vietnamese</label>
-                <br /><input type="checkbox" name="cuisine" value="breakfast" id="bk" />
+                <br /><input type="checkbox" name="cuisine" value="breakfast_brunch" id="bk" />
                 <label for="bk">Breakfast</label>
-                <br /><input type="checkbox" name="cuisine" value="breakfast" id="sl" />
+                <br /><input type="checkbox" name="cuisine" value="soulfood" id="sl" />
                 <label for="sl">Soul</label>
                 <br /><input type="text" name="other" placeholder="Other" />
             </div>
