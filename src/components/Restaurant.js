@@ -3,22 +3,21 @@ import React from 'react';
 const Restaurant = props => {
     return (
         <div className="restaurant-container">
-            Restaurant result
-            <p>
+            <h1>You're going here: </h1>
+            <div>
                 <br />{props.id}
-                <br />{props.name}
-                <br />{props.imgUrl}
-                <br />{props.url}
-                <br /><a href={props.url}>Link</a>
-                <br />{props.reviewCount}
-                <br />{props.price}
-                <br />{props.rating}
+                <br /><h2>{props.name}</h2>
+                <br /><img src={props.imgUrl} alt="{props.name} Image" width="300" height="200"></img>
+                <br /><a href={props.url}>Yelp Link</a>
+                <br />Reviews: {props.reviewCount}
+                <br />Price: {props.price}
+                <br />Rating: {props.rating}
                 <br />{props.lat}
                 <br />{props.long}
-                <br />{props.phone}
+                <br />Call: {props.phone}
                 <br />{props.displayAddress[0]}
                 <br />{props.displayAddress[1]}
-            </p>
+            </div>
         </div>
     );
 };

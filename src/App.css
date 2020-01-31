@@ -40,3 +40,29 @@
 .app-title {
   font-weight: 10px;
 }
+
+input[type="text"] {
+  border-width: 0px;
+  outline: none;
+  border-bottom: 1px solid;
+  margin: 2px;
+  font-size: 25px;
+}
+
+input[type="radio"], input[type="checkbox"] {
+  visibility: hidden;
+}
+
+label {
+  cursor: pointer;
+}
+
+input:checked + label {
+  font-weight: 900;
+  font-size: larger;
+  color:#1DB954;
+}
+
+button {
+  font-size: 25px;
+}
