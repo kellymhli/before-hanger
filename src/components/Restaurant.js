@@ -6,7 +6,6 @@ const Restaurant = props => {
             Restaurant result
             <p>
                 Res:
-                { props.restaurants }
             </p>
         </div>
     );

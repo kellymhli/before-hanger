@@ -21,6 +21,12 @@ class App extends React.Component {
     res: undefined,
   }
 
+  // Select random index from resulting array of restaurants
+  getRandInt = () => {
+    const randomInt = Math.random() * this.state.res.total;
+    return Math.round(randomInt);
+  }
+
   getOptions = async (e) => {
     e.preventDefault();
 
@@ -55,8 +61,9 @@ class App extends React.Component {
         }
       })
       .then((res) => {
-        this.setState({res: res.data.businesses[0].id});
-        console.log(this.state.res);
+        this.setState({res: res.data});
+        console.log(this.state.res)
+        console.log(this.state.res.businesses[this.getRandInt()]);
       })
       .catch((err) => {
         console.log('error');
@@ -69,7 +76,7 @@ class App extends React.Component {
       <div>
         <Title />
         <Form getOptions={ this.getOptions } />
-        <Restaurant restaurants={ this.state.res } />
+        <Restaurant />
       </div>
     );
   };
