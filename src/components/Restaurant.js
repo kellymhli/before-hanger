@@ -9,6 +9,7 @@ const Restaurant = props => {
                 <br />{props.name}
                 <br />{props.imgUrl}
                 <br />{props.url}
+                <br /><a href={props.url}>Link</a>
                 <br />{props.reviewCount}
                 <br />{props.price}
                 <br />{props.rating}
