@@ -35,7 +35,7 @@ class App extends React.Component {
 
   formatValues = (e) => {
     const city = e.target.elements.city.value;
-    const radius = parseInt(e.target.elements.radius.value);
+    let radius = parseInt(e.target.elements.radius.value);
     const cuisines = e.target.elements.cuisine;
     const price_lst = e.target.elements.price;
     const otherCuisine = e.target.elements.other.value.replace(/ /g, "");
@@ -61,6 +61,12 @@ class App extends React.Component {
     const categories = checkedCuisines.join(',');
     const prices = checkedPrices.join(',');
 
+    if (radius*1609 > 40000) {
+      radius = 40000;
+    } else {
+      radius *= 1609;
+    }
+
     const values = {
       city: city,
       radius: radius,
@@ -70,12 +76,12 @@ class App extends React.Component {
     return values;
   }
 
-  getOptions = async (e) => {
+  getOptions = (e) => {
     e.preventDefault();
     const v = this.formatValues(e);
     // Update selected values in state and fetch results from Yelp API
     // https://medium.com/@chaoyue_zhao/how-to-make-axios-api-calls-with-yelp-fusion-inside-react-js-10755d8485c5
-    this.setState({location: v.city, price: v.price, categories: v.categories, radius: v.radius*1609}, () => {
+    this.setState({location: v.city, price: v.price, categories: v.categories, radius: v.radius}, () => {
       console.log(this.state);
       axios.get(`${'https://cors-anywhere.herokuapp.com/'}${ENDPOINT}`, {
         headers: {
@@ -127,7 +133,7 @@ class App extends React.Component {
           long={this.state.selectedRes.coordinates.longitude}
           phone={this.state.selectedRes.phone}
           displayAddress={this.state.selectedRes.location.display_address}
-          />:null}
+        />:null}
       </div>
     );
   };
