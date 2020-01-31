@@ -19,6 +19,7 @@ class App extends React.Component {
     price: undefined,
     radius: 2414,  //Default to 1.5mi in meters
     res: undefined,
+    selectedRes: undefined,
   }
 
   // Select random index from resulting array of restaurants
@@ -65,9 +66,14 @@ class App extends React.Component {
         }
       })
       .then((res) => {
-        this.setState({res: res.data});
-        console.log(this.state.res)
-        console.log(this.state.res.businesses[this.getRandInt()]);
+        // Randomly select restaurant from resulting list
+        this.setState({res: res.data}, () => {
+          const int = this.getRandInt();
+          console.log(int);
+          this.setState({selectedRes: res.data.businesses[int]}, () => {
+            console.log(this.state.res, this.state.selectedRes);
+          });
+        });
       })
       .catch((err) => {
         console.log('error');
