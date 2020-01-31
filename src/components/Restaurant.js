@@ -6,6 +6,7 @@ const Restaurant = props => {
             Restaurant result
             <p>
                 Res:
+                {props.resId}
             </p>
         </div>
     );

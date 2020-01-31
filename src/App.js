@@ -34,7 +34,6 @@ class App extends React.Component {
 
   getOptions = async (e) => {
     e.preventDefault();
-
     // Get all the cuisines that have been checked and add to array
     const cuisines = e.target.elements.cuisine;
     var i;
@@ -86,7 +85,7 @@ class App extends React.Component {
       <div>
         <Title />
         <Form getOptions={ this.getOptions } />
-        <Restaurant />
+        <Restaurant resId={this.state.selectedRes} />
       </div>
     );
   };
