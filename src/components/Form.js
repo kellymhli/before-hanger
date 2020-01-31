@@ -4,14 +4,14 @@ const Form = props => (
     <form onSubmit={props.getOptions}>
         <div className="form-container">
             <div className="price-container">
-                <input type="radio" name="price" value="1" id="radio1" />
-                <label for="radio1">$</label>
-                <input type="radio" name="price" value="2" id="radio2" />
-                <label for="radio2">$$</label>
-                <input type="radio" name="price" value="3" id="radio3" />
-                <label for="radio3">$$$</label>
-                <input type="radio" name="price" value="4" id="radio4" />
-                <label for="radio4">$$$$</label>
+                <input type="checkbox" name="price" value="1" id="price1" />
+                <label for="price1">$</label>
+                <input type="checkbox" name="price" value="2" id="price2" />
+                <label for="price2">$$</label>
+                <input type="checkbox" name="price" value="3" id="price3" />
+                <label for="price3">$$$</label>
+                <input type="checkbox" name="price" value="4" id="price4" />
+                <label for="price4">$$$$</label>
             </div>
 
             <div className="cuisine-container">
@@ -33,6 +33,9 @@ const Form = props => (
                 <label for="vt">Vietnamese</label>
                 <br /><input type="checkbox" name="cuisine" value="breakfast" id="bk" />
                 <label for="bk">Breakfast</label>
+                <br /><input type="checkbox" name="cuisine" value="breakfast" id="sl" />
+                <label for="sl">Soul</label>
+                <br /><input type="text" name="other" placeholder="Other" />
             </div>
             <div>
                 <input type="text" name="city" placeholder="City..." defaultValue="94108"/><br />

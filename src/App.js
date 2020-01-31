@@ -33,21 +33,34 @@ class App extends React.Component {
     }
   }
 
-  getOptions = async (e) => {
+  getOptions = (e) => {
     e.preventDefault();
-    // Get all the cuisines that have been checked and add to array
+    const city = e.target.elements.city.value;
+    const radius = parseInt(e.target.elements.radius.value);
     const cuisines = e.target.elements.cuisine;
+    const prices = e.target.elements.price;
+    const otherCuisine = e.target.elements.other.value.replace(/ /g, "");
+
     var i;
     let checkedCuisines = [];
+    if (otherCuisine) checkedCuisines.push(otherCuisine);
+    // Store user entered option to cuisines array
     for (i = 0; i < cuisines.length; i++) {
+      // Get all the cuisines that have been checked and add to array
       if (cuisines[i].checked) {
         checkedCuisines.push(cuisines[i].value);
       }
     }
+
+    let checkedPrices = [];
+    for (i = 0; i < prices.length; i++) {
+      // Get all user selected prices and add to array
+      if (prices[i].checked) {
+        checkedPrices.push(prices[i].value);
+      }
+    }
     const categories = checkedCuisines.join(',');
-    const price = e.target.elements.price.value;
-    const city = e.target.elements.city.value;
-    const radius = parseInt(e.target.elements.radius.value);
+    const price = checkedPrices.join(',');
 
     // Update selected values in state and fetch results from Yelp API
     // https://medium.com/@chaoyue_zhao/how-to-make-axios-api-calls-with-yelp-fusion-inside-react-js-10755d8485c5
