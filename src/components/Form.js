@@ -17,29 +17,36 @@ const Form = props => (
             <div className="cuisine-container">
                 <input type="checkbox" name="cuisine" value="am" id="am"/>
                 <label for="am">American</label>
-                <br /><input type="checkbox" name="cuisine" value="chinese" id="ch" />
+                <input type="checkbox" name="cuisine" value="breakfast_brunch" id="bk" />
+                <label for="bk">Breakfast</label>
+                <input type="checkbox" name="cuisine" value="chinese" id="ch" />
                 <label for="ch">Chinese</label>
-                <br /><input type="checkbox" name="cuisine" value="german" id="gm" />
+                <input type="checkbox" name="cuisine" value="french" id="fr" />
+                <label for="fr">French</label>
+                <input type="checkbox" name="cuisine" value="german" id="gm" />
                 <label for="gm">German</label>
-                <br /><input type="checkbox" name="cuisine" value="indpak" id="in" />
+                <input type="checkbox" name="cuisine" value="greek" id="gr" />
+                <label for="gr">Greek</label>
+                <input type="checkbox" name="cuisine" value="indpak" id="in" />
                 <label for="in">Indian</label>
-                <br /><input type="checkbox" name="cuisine" value="korean" id="kr" />
-                <label for="kr">Korean</label>
+                <input type="checkbox" name="cuisine" value="italian" id="it" />
+                <label for="it">Italian</label>
                 <br /><input type="checkbox" name="cuisine" value="japanese" id="jp" />
                 <label for="jp">Japanese</label>
-                <br /><input type="checkbox" name="cuisine" value="thai" id="th" />
-                <label for="th">Thai</label>
-                <br /><input type="checkbox" name="cuisine" value="vietnamese" id="vt" />
-                <label for="vt">Vietnamese</label>
-                <br /><input type="checkbox" name="cuisine" value="breakfast_brunch" id="bk" />
-                <label for="bk">Breakfast</label>
-                <br /><input type="checkbox" name="cuisine" value="soulfood" id="sl" />
+                <input type="checkbox" name="cuisine" value="korean" id="kr" />
+                <label for="kr">Korean</label>
+                <input type="checkbox" name="cuisine" value="mexican" id="mx" />
+                <label for="mx">Mexican</label>
+                <input type="checkbox" name="cuisine" value="soulfood" id="sl" />
                 <label for="sl">Soul</label>
-                <br /><input type="text" name="other" placeholder="Other" />
+                <input type="checkbox" name="cuisine" value="thai" id="th" />
+                <label for="th">Thai</label>
+                <input type="checkbox" name="cuisine" value="vietnamese" id="vt" />
+                <label for="vt">Vietnamese</label>
+                <br /><input type="text" name="other" placeholder="Craving something else?" />
             </div>
-            <div>
-                <input type="text" name="city" placeholder="City..." defaultValue="94108"/><br />
-                How many miles can you travel?<br />
+            <div class="distance">
+                <input type="text" name="city" placeholder="City..." defaultValue="Downtown, San Francisco"/><br />
                 <input type="text" name="radius" placeholder="How many miles can you travel?" defaultValue="3" />
             </div>
             <button>I'm Hungry</button>

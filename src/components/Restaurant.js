@@ -3,12 +3,10 @@ import React from 'react';
 const Restaurant = props => {
     return (
         <div className="restaurant-container">
-            <h1>You're going here: </h1>
+            <h3>Done. You're going to: <br /><br />{props.name}</h3>
             <div>
-                <br />{props.id}
-                <br /><h2>{props.name}</h2>
-                <br /><img src={props.imgUrl} alt="{props.name}" width="300" height="200" />
-                <br /><a href={props.url}>Yelp Link</a>
+                <img src={props.imgUrl} alt="{props.name}" width="500" height="350" />
+                <br /><a href={props.url} target="_blank">Yelp Link</a>
                 <br />Reviews: {props.reviewCount}
                 <br />Price: {props.price}
                 <br />Rating: {props.rating}

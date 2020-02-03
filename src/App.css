@@ -1,22 +1,39 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.title-container, .distance, .cuisine-container, .price-container {
+  margin: 15px;
+}
+
 input[type="text"] {
+  background-color: transparent;
   border-width: 0px;
   outline: none;
   border-bottom: 1px solid;
   margin: 2px;
-  font-size: 25px;
+  width: 250px;
+  font-size: 18px;
+  text-align: center;
+  margin: 8px;
 }
 
-input[type="radio"], input[type="checkbox"] {
+input[type="checkbox"] {
   visibility: hidden;
 }
 
 label {
   cursor: pointer;
+  font-size: 18px;
 }
 
 input:checked + label {
-  font-weight: 900;
-  font-size: larger;
+  font-weight:500;
+  font-size: 19px;
   color:#1DB954;
 }
 

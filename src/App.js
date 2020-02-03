@@ -64,7 +64,7 @@ class App extends React.Component {
     if (radius*1609 > 40000) {
       radius = 40000;
     } else {
-      radius *= 1609;
+      radius *= 1609;  // Meters in a mile
     }
 
     const values = {
@@ -118,7 +118,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <Title />
         <Form getOptions={ this.getOptions } />
         {this.state.selectedRes ? <Restaurant
