@@ -1,6 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![App GIF](https://i.gyazo.com/258453bc937d90603ec3703240e6938b.gif)
 
-[![App GIF](https://i.gyazo.com/258453bc937d90603ec3703240e6938b.gif)](https://gyazo.com/258453bc937d90603ec3703240e6938b)
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
