@@ -46,8 +46,8 @@ const Form = props => (
                 <br /><input type="text" name="other" placeholder="Craving something else?" />
             </div>
             <div class="distance">
-                <input type="text" name="city" placeholder="City..." defaultValue="Downtown, San Francisco"/><br />
-                <input type="text" name="radius" placeholder="How many miles can you travel?" defaultValue="3" />
+                <input type="text" name="city" placeholder="Where are you?" /><br />
+                <input type="text" name="radius" placeholder="How many miles can you travel?" />
             </div>
             <button>I'm Hungry</button>
         </div>
