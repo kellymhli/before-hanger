@@ -79,6 +79,11 @@ class App extends React.Component {
   getOptions = (e) => {
     e.preventDefault();
     const v = this.formatValues(e);
+    var geolocation = require('geolocation');
+    geolocation.getCurrentPosition(function (err, position) {
+      if (err) throw err;
+      console.log(position);
+    });
     // Update selected values in state and fetch results from Yelp API
     // https://medium.com/@chaoyue_zhao/how-to-make-axios-api-calls-with-yelp-fusion-inside-react-js-10755d8485c5
     this.setState({location: v.city, price: v.price, categories: v.categories, radius: v.radius}, () => {
