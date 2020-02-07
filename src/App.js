@@ -82,7 +82,7 @@ class App extends React.Component {
     var geolocation = require('geolocation');
     geolocation.getCurrentPosition(function (err, position) {
       if (err) throw err;
-      console.log(position);
+      console.log(position.coords.latitude, position.coords.longitude);
     });
     // Update selected values in state and fetch results from Yelp API
     // https://medium.com/@chaoyue_zhao/how-to-make-axios-api-calls-with-yelp-fusion-inside-react-js-10755d8485c5
